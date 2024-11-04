@@ -9,10 +9,7 @@ bool isPalindrome(int x) {
 		reverse = reverse * 10 + digit;
 		copy /= 10;
 	}
-
-	if (reverse == x)
-		return true;
-	return false;
+	return reverse == x;
 }
 
 int main() {
