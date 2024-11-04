@@ -2,23 +2,23 @@
 #include <unordered_map>
 
 std::vector<int> twoSum(std::vector<int>& nums, int target) {
-	std::unordered_map<int, int> hash;
+	std::unordered_map<int, int> map;
 	for(int i = 0; i < nums.size(); ++i)
 	{
-		int complement = target - nums[i];
-		if (hash.find(complement) != hash.end())
+		int difference = target - nums[i];
+		if (map.find(difference) != map.end())
 		{
-			return { hash[complement] ,i};
+			return { map[difference] ,i};
 		}
-		hash[nums[i]]=i;
-
+		map[nums[i]]=i;
 	}
 	return {};
 }
 
 int main() {
-	std::vector<int> AAA{ 2,7,11,15 };
-	std::vector<int> AAAb= twoSum(AAA, 9);
-	for (auto k : AAAb)
+	std::vector<int> input_array{ 2,7,11,15 };
+	int target{ 9 };
+	std::vector<int> indices_output= twoSum(input_array, target);
+	for (auto k : indices_output)
 		std::cout << k << " ";
 }
